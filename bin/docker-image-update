@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ ! -e "${PWD}/Dockerfile" ]]
+then
+    echo "ERROR: No ${PWD}/Dockerfile found, change your current directory to the right one"
+    exit 1
+fi
+
+docker build --tag "${PWD##*/}" "${PWD}"
