@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ ! -e "${PWD}/scripts/bin/D__forge" ]]
+then
+    echo "ERROR: No ${PWD}/script/bin/D__forge found, change your current directory to the d__forge root"
+    exit 1
+fi
+
+docker run --rm -it -v "${PWD}:/sources" dc__forge-test "$@"
